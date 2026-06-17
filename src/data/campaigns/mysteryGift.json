@@ -1,0 +1,98 @@
+{
+  "id": "mystery-gift-carnival",
+  "name": "Mystery Gift Carnival",
+  "theme": {
+    "primary": "#DC2626",
+    "background": "#FFF1F2",
+    "surface": "#FFFFFF",
+    "text": "#7F1D1D",
+    "accent": "#F59E0B"
+  },
+  "overlay": {
+    "type": "FULL_SCREEN_OVERLAY",
+    "animation_url": "https://assets9.lottiefiles.com/packages/lf20_obhph3sh.json"
+  },
+  "blocks": [
+    {
+      "id": "mystery-hero",
+      "type": "BANNER_HERO",
+      "title": "Mystery Gift Carnival",
+      "subtitle": "Every order unwraps a surprise 🎁",
+      "image": "https://picsum.photos/seed/carnival/800/400",
+      "cta": {
+        "label": "Reveal my gift",
+        "action": { "type": "APPLY_MYSTERY_GIFT_COUPON", "payload": { "couponId": "CARNIVAL-HERO" } }
+      }
+    },
+    {
+      "id": "mystery-row",
+      "type": "DYNAMIC_COLLECTION",
+      "title": "Tap to Unwrap",
+      "products": [
+        {
+          "id": "mg-box-red",
+          "title": "Red Mystery Box",
+          "price": 1,
+          "image": "https://picsum.photos/seed/redbox/300/300",
+          "action": { "type": "APPLY_MYSTERY_GIFT_COUPON", "payload": { "couponId": "MYSTERY-RED" } }
+        },
+        {
+          "id": "mg-box-gold",
+          "title": "Gold Mystery Box",
+          "price": 1,
+          "image": "https://picsum.photos/seed/goldbox/300/300",
+          "action": { "type": "APPLY_MYSTERY_GIFT_COUPON", "payload": { "couponId": "MYSTERY-GOLD" } }
+        },
+        {
+          "id": "mg-box-blue",
+          "title": "Blue Mystery Box",
+          "price": 1,
+          "image": "https://picsum.photos/seed/bluebox/300/300",
+          "action": { "type": "APPLY_MYSTERY_GIFT_COUPON", "payload": { "couponId": "MYSTERY-BLUE" } }
+        },
+        {
+          "id": "mg-box-green",
+          "title": "Green Mystery Box",
+          "price": 1,
+          "image": "https://picsum.photos/seed/greenbox/300/300",
+          "action": { "type": "APPLY_MYSTERY_GIFT_COUPON", "payload": { "couponId": "MYSTERY-GREEN" } }
+        }
+      ]
+    },
+    {
+      "id": "mystery-grid",
+      "type": "PRODUCT_GRID_2X2",
+      "title": "Carnival Picks",
+      "products": [
+        {
+          "id": "mg-popcorn",
+          "title": "Caramel Popcorn Tub",
+          "price": 120,
+          "image": "https://picsum.photos/seed/popcorn/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "mg-popcorn" } }
+        },
+        {
+          "id": "mg-balloons",
+          "title": "Party Balloon Pack (50)",
+          "price": 199,
+          "image": "https://picsum.photos/seed/balloons/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "mg-balloons" } }
+        },
+        {
+          "id": "mg-mask",
+          "title": "Carnival Mask Set",
+          "price": 149,
+          "image": "https://picsum.photos/seed/mask/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "mg-mask" } }
+        },
+        {
+          "id": "mg-candy",
+          "title": "Assorted Candy Jar",
+          "price": 249,
+          "image": "https://picsum.photos/seed/candy/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "mg-candy" } }
+        }
+      ]
+    }
+  ]
+}

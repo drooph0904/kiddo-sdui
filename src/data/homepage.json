@@ -1,0 +1,139 @@
+{
+  "theme": {
+    "primary": "#FF9933",
+    "background": "#FFF5E6",
+    "surface": "#FFFFFF",
+    "text": "#1F2933",
+    "accent": "#FFD23F"
+  },
+  "blocks": [
+    {
+      "id": "hero-welcome",
+      "type": "BANNER_HERO",
+      "title": "Delivered in minutes",
+      "subtitle": "Everything your kiddo needs, at your door",
+      "image": "https://picsum.photos/seed/kiddo-hero/800/400",
+      "cta": {
+        "label": "Shop now",
+        "action": { "type": "DEEP_LINK", "payload": { "url": "/category/all" } }
+      }
+    },
+    {
+      "id": "grid-essentials",
+      "type": "PRODUCT_GRID_2X2",
+      "title": "Daily Essentials",
+      "products": [
+        {
+          "id": "p-diapers",
+          "title": "Ultra-Soft Diapers (Pack of 60)",
+          "price": 799,
+          "image": "https://picsum.photos/seed/diapers/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "p-diapers" } }
+        },
+        {
+          "id": "p-wipes",
+          "title": "Gentle Baby Wipes (72s)",
+          "price": 149,
+          "image": "https://picsum.photos/seed/wipes/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "p-wipes" } }
+        },
+        {
+          "id": "p-formula",
+          "title": "Stage-1 Infant Formula 400g",
+          "price": 549,
+          "image": "https://picsum.photos/seed/formula/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "p-formula" } }
+        },
+        {
+          "id": "p-lotion",
+          "title": "Baby Moisturising Lotion 200ml",
+          "price": 229,
+          "image": "https://picsum.photos/seed/lotion/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "p-lotion" } }
+        }
+      ]
+    },
+    {
+      "id": "collection-snacks",
+      "type": "DYNAMIC_COLLECTION",
+      "title": "Snacks under ₹99",
+      "products": [
+        {
+          "id": "s-puffs",
+          "title": "Organic Veggie Puffs",
+          "price": 75,
+          "image": "https://picsum.photos/seed/puffs/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "s-puffs" } }
+        },
+        {
+          "id": "s-biscuits",
+          "title": "Ragi Milk Biscuits",
+          "price": 60,
+          "image": "https://picsum.photos/seed/biscuits/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "s-biscuits" } }
+        },
+        {
+          "id": "s-fruitbar",
+          "title": "Mixed Fruit Bars (5s)",
+          "price": 99,
+          "image": "https://picsum.photos/seed/fruitbar/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "s-fruitbar" } }
+        },
+        {
+          "id": "s-juice",
+          "title": "No-Sugar Apple Juice 200ml",
+          "price": 45,
+          "image": "https://picsum.photos/seed/juice/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "s-juice" } }
+        },
+        {
+          "id": "s-yogurt",
+          "title": "Fruit Yogurt Pouch",
+          "price": 35,
+          "image": "https://picsum.photos/seed/yogurt/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "s-yogurt" } }
+        }
+      ]
+    },
+    {
+      "id": "unknown-future-block",
+      "type": "NEW_COMPONENT_V2",
+      "experimentalPayload": { "foo": "bar", "rolloutPercent": 5 }
+    },
+    {
+      "id": "collection-toys",
+      "type": "DYNAMIC_COLLECTION",
+      "title": "Playtime Favourites",
+      "products": [
+        {
+          "id": "t-blocks",
+          "title": "Soft Building Blocks (40 pc)",
+          "price": 499,
+          "image": "https://picsum.photos/seed/blocks/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "t-blocks" } }
+        },
+        {
+          "id": "t-rattle",
+          "title": "Musical Rattle Set",
+          "price": 199,
+          "image": "https://picsum.photos/seed/rattle/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "t-rattle" } }
+        },
+        {
+          "id": "t-teether",
+          "title": "Silicone Teether Ring",
+          "price": 149,
+          "image": "https://picsum.photos/seed/teether/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "t-teether" } }
+        },
+        {
+          "id": "t-stacker",
+          "title": "Rainbow Ring Stacker",
+          "price": 299,
+          "image": "https://picsum.photos/seed/stacker/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "t-stacker" } }
+        }
+      ]
+    }
+  ]
+}

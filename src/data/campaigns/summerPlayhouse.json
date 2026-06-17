@@ -1,0 +1,98 @@
+{
+  "id": "summer-playhouse",
+  "name": "Summer Playhouse",
+  "theme": {
+    "primary": "#0EA5E9",
+    "background": "#E0F7FA",
+    "surface": "#FFFFFF",
+    "text": "#0C4A6E",
+    "accent": "#38BDF8"
+  },
+  "overlay": {
+    "type": "FULL_SCREEN_OVERLAY",
+    "animation_url": "https://assets5.lottiefiles.com/packages/lf20_jR229r.json"
+  },
+  "blocks": [
+    {
+      "id": "summer-hero",
+      "type": "BANNER_HERO",
+      "title": "Summer Playhouse Festival",
+      "subtitle": "Splash into cool deals all season",
+      "image": "https://picsum.photos/seed/summer/800/400",
+      "cta": {
+        "label": "Explore",
+        "action": { "type": "DEEP_LINK", "payload": { "url": "/campaign/summer" } }
+      }
+    },
+    {
+      "id": "summer-events",
+      "type": "DYNAMIC_COLLECTION",
+      "title": "Petting Zoo Tickets",
+      "products": [
+        {
+          "id": "evt-pettingzoo",
+          "title": "Petting Zoo Day Pass",
+          "price": 299,
+          "image": "https://picsum.photos/seed/pettingzoo/300/300",
+          "action": { "type": "DEEP_LINK", "payload": { "url": "/events/petting-zoo" } }
+        },
+        {
+          "id": "evt-splashpark",
+          "title": "Splash Park Family Ticket",
+          "price": 599,
+          "image": "https://picsum.photos/seed/splashpark/300/300",
+          "action": { "type": "DEEP_LINK", "payload": { "url": "/events/splash-park" } }
+        },
+        {
+          "id": "evt-puppet",
+          "title": "Puppet Show Seat",
+          "price": 199,
+          "image": "https://picsum.photos/seed/puppet/300/300",
+          "action": { "type": "DEEP_LINK", "payload": { "url": "/events/puppet-show" } }
+        },
+        {
+          "id": "evt-craft",
+          "title": "Summer Craft Workshop",
+          "price": 349,
+          "image": "https://picsum.photos/seed/craft/300/300",
+          "action": { "type": "DEEP_LINK", "payload": { "url": "/events/craft-workshop" } }
+        }
+      ]
+    },
+    {
+      "id": "summer-gear",
+      "type": "PRODUCT_GRID_2X2",
+      "title": "Beat the Heat",
+      "products": [
+        {
+          "id": "sm-pool",
+          "title": "Inflatable Baby Pool",
+          "price": 999,
+          "image": "https://picsum.photos/seed/pool/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-pool" } }
+        },
+        {
+          "id": "sm-hat",
+          "title": "Wide-Brim Sun Hat",
+          "price": 249,
+          "image": "https://picsum.photos/seed/sunhat/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-hat" } }
+        },
+        {
+          "id": "sm-sunscreen",
+          "title": "Baby SPF50 Sunscreen",
+          "price": 399,
+          "image": "https://picsum.photos/seed/sunscreen/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-sunscreen" } }
+        },
+        {
+          "id": "sm-ball",
+          "title": "Beach Ball Combo",
+          "price": 179,
+          "image": "https://picsum.photos/seed/beachball/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-ball" } }
+        }
+      ]
+    }
+  ]
+}

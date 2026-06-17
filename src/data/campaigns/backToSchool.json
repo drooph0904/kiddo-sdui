@@ -1,0 +1,98 @@
+{
+  "id": "back-to-school",
+  "name": "Back to School",
+  "theme": {
+    "primary": "#1D4ED8",
+    "background": "#FFFDE7",
+    "surface": "#FFFFFF",
+    "text": "#15233B",
+    "accent": "#FACC15"
+  },
+  "overlay": {
+    "type": "FULL_SCREEN_OVERLAY",
+    "animation_url": "https://assets10.lottiefiles.com/packages/lf20_u4yrau.json"
+  },
+  "blocks": [
+    {
+      "id": "bts-hero",
+      "type": "BANNER_HERO",
+      "title": "Back to School Mega-Sale",
+      "subtitle": "Up to 50% off bags, bottles & supplies",
+      "image": "https://picsum.photos/seed/backtoschool/800/400",
+      "cta": {
+        "label": "Grab deals",
+        "action": { "type": "DEEP_LINK", "payload": { "url": "/campaign/back-to-school" } }
+      }
+    },
+    {
+      "id": "bts-lunchboxes",
+      "type": "DYNAMIC_COLLECTION",
+      "title": "Lunchboxes & Bags",
+      "products": [
+        {
+          "id": "bts-lunchbox",
+          "title": "Insulated Steel Lunchbox",
+          "price": 649,
+          "image": "https://picsum.photos/seed/lunchbox/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-lunchbox" } }
+        },
+        {
+          "id": "bts-backpack",
+          "title": "Dino Kids Backpack",
+          "price": 899,
+          "image": "https://picsum.photos/seed/backpack/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-backpack" } }
+        },
+        {
+          "id": "bts-bottle",
+          "title": "Sipper Water Bottle 600ml",
+          "price": 299,
+          "image": "https://picsum.photos/seed/bottle/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-bottle" } }
+        },
+        {
+          "id": "bts-pencilcase",
+          "title": "Zip Pencil Case",
+          "price": 149,
+          "image": "https://picsum.photos/seed/pencilcase/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-pencilcase" } }
+        }
+      ]
+    },
+    {
+      "id": "bts-stationery",
+      "type": "PRODUCT_GRID_2X2",
+      "title": "Stationery Stock-Up",
+      "products": [
+        {
+          "id": "bts-crayons",
+          "title": "Washable Crayons (24)",
+          "price": 129,
+          "image": "https://picsum.photos/seed/crayons/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-crayons" } }
+        },
+        {
+          "id": "bts-notebooks",
+          "title": "Ruled Notebooks (Pack of 6)",
+          "price": 199,
+          "image": "https://picsum.photos/seed/notebooks/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-notebooks" } }
+        },
+        {
+          "id": "bts-colors",
+          "title": "Watercolour Paint Set",
+          "price": 249,
+          "image": "https://picsum.photos/seed/paints/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-colors" } }
+        },
+        {
+          "id": "bts-glue",
+          "title": "Non-Toxic Glue Sticks (3)",
+          "price": 89,
+          "image": "https://picsum.photos/seed/glue/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-glue" } }
+        }
+      ]
+    }
+  ]
+}
