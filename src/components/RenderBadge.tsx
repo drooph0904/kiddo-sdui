@@ -8,7 +8,12 @@
  * React.memo + Zustand-selector render isolation visible without needing to read logs.
  *
  * Rendered only in __DEV__ builds; invisible in production.
+ *
+ * NOTE: this file intentionally reads and bumps a ref during render — that is exactly how a
+ * render counter must work. The `react-hooks/refs` rule (which guards against accidental
+ * ref-during-render) is therefore disabled for this one diagnostic-only component.
  */
+/* eslint-disable react-hooks/refs */
 import React, { useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useShowBadges } from '../store/debugStore';

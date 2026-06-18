@@ -12,7 +12,7 @@ interface ProductVisual {
 }
 
 /** Ordered keyword → emoji rules. First match wins, so put specific words first. */
-const RULES: ReadonlyArray<readonly [RegExp, string, string]> = [
+const RULES: readonly (readonly [RegExp, string, string])[] = [
   [/diaper|pant/i, '🧷', '#FFF1F2'],
   [/wipe/i, '🧻', '#F0FDFA'],
   [/formula|nan|cerelac|milk/i, '🍼', '#EFF6FF'],

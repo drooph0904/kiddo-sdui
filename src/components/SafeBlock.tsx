@@ -24,9 +24,12 @@ export function SafeBlock({ block }: { block: UnknownBlock }): React.JSX.Element
     return null;
   }
 
+  // `Component` is a STABLE, module-level component resolved from the registry — not a
+  // component created during render. `createElement` makes that explicit and avoids the
+  // static-components lint heuristic that (incorrectly) flags the dynamic JSX form.
   return (
     <BlockErrorBoundary blockId={block.id} blockType={block.type}>
-      <Component block={block} />
+      {React.createElement(Component, { block })}
     </BlockErrorBoundary>
   );
 }
