@@ -11,6 +11,7 @@ import { FlashList } from '@shopify/flash-list';
 import type { UnknownBlock } from '../types/schema';
 import { SafeBlock } from '../components/SafeBlock';
 
+
 interface HomeScreenProps {
   blocks: UnknownBlock[];
   listHeader: React.ReactElement;

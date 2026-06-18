@@ -40,6 +40,7 @@ function DynamicCollectionBase({ block }: { block: DynamicCollectionBlock }): Re
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={Separator}
           contentContainerStyle={styles.content}
+
         />
       </View>
     </View>
