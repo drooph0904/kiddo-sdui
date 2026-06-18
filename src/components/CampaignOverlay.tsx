@@ -9,11 +9,16 @@
  * then settles — instead of distracting forever. The parent remounts it per campaign (via
  * a `key`) so the burst replays each time you switch campaigns. Reduced opacity keeps it
  * tasteful over the shopping UI.
+ *
+ * Media pipeline: the animation JSON is pulled through `useCachedLottie`, which downloads
+ * each URL once and serves every later request from memory (req: efficient cache pipeline).
+ * `cacheComposition` additionally caches the parsed composition on Android.
  */
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import LottieView from 'lottie-react-native';
 import type { OverlayConfig } from '../types/schema';
+import { useCachedLottie } from '../utils/lottieCache';
 
 export function CampaignOverlay({
   overlay,
@@ -23,13 +28,22 @@ export function CampaignOverlay({
   if (!overlay) {
     return null;
   }
+  return <OverlayLottie url={overlay.animation_url} />;
+}
 
+/** Inner component so the cache hook is called unconditionally (rules of hooks). */
+function OverlayLottie({ url }: { url: string }): React.JSX.Element | null {
+  const source = useCachedLottie(url);
+  if (!source) {
+    return null; // first fetch in flight, or it failed — stay invisible
+  }
   return (
     <View style={[StyleSheet.absoluteFill, styles.layer]} pointerEvents="none">
       <LottieView
-        source={{ uri: overlay.animation_url }}
+        source={source}
         autoPlay
         loop={false}
+        cacheComposition
         resizeMode="cover"
         style={StyleSheet.absoluteFill}
       />
