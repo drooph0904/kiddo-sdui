@@ -1,10 +1,7 @@
 /**
- * Root engine node.
- *
- * Holds the single piece of app-level state — which campaign is live — and from it derives
- * the active theme, feed blocks, and overlay. The whole tree is wrapped in ThemeProvider so
- * switching campaigns recolors everything instantly (OTA theming), with the campaign overlay
- * and cart badge layered above the feed.
+ * Root engine node. Holds active-campaign state and derives the theme,
+ * feed blocks, and Lottie overlay from it. ThemeProvider wraps the entire
+ * tree so switching campaigns recolors every component instantly (OTA theming).
  */
 import React, { useMemo, useState } from 'react';
 import { Platform, StatusBar, StyleSheet, Text, View } from 'react-native';
@@ -29,31 +26,45 @@ export default function App(): React.JSX.Element {
 
   const options: PickerOption[] = useMemo(
     () => [
-      { id: HOME_ID, label: 'Home' },
-      ...campaigns.map((campaign) => ({ id: campaign.id, label: campaign.name })),
+      { id: HOME_ID, label: '🏠 Home' },
+      ...campaigns.map((c) => ({ id: c.id, label: c.name })),
     ],
     [],
   );
 
   const active: ActiveContext = useMemo(() => {
     const campaign = campaigns.find((c) => c.id === activeId);
-    if (campaign) {
-      return { theme: campaign.theme, blocks: campaign.blocks, overlay: campaign.overlay };
-    }
-    return { theme: homePayload.theme, blocks: homePayload.blocks, overlay: undefined };
+    return campaign
+      ? { theme: campaign.theme, blocks: campaign.blocks, overlay: campaign.overlay }
+      : { theme: homePayload.theme, blocks: homePayload.blocks };
   }, [activeId]);
+
+  const topInset = Platform.OS === 'android' ? StatusBar.currentHeight ?? 0 : 44;
 
   const listHeader = (
     <View style={styles.header}>
-      <Text style={[styles.brand, { color: active.theme.primary }]}>kiddo</Text>
-      <Text style={[styles.tagline, { color: active.theme.text }]}>
-        the best for your kiddo · delivered in minutes
-      </Text>
+      {/* Brand row */}
+      <View style={styles.brandRow}>
+        <View>
+          <Text style={[styles.brand, { color: active.theme.primary }]}>kiddo 🩷</Text>
+          <Text style={[styles.tagline, { color: active.theme.text }]}>
+            the best for your kiddo
+          </Text>
+        </View>
+        {/* Delivery badge */}
+        <View style={[styles.deliveryBadge, { backgroundColor: active.theme.primary + '18' }]}>
+          <Text style={styles.deliveryIcon}>⚡</Text>
+          <View>
+            <Text style={[styles.deliveryMin, { color: active.theme.primary }]}>10 min</Text>
+            <Text style={[styles.deliveryLabel, { color: active.theme.text }]}>delivery</Text>
+          </View>
+        </View>
+      </View>
+
+      {/* Campaign picker */}
       <CampaignPicker options={options} activeId={activeId} onSelect={setActiveId} />
     </View>
   );
-
-  const topInset = Platform.OS === 'android' ? StatusBar.currentHeight ?? 0 : 44;
 
   return (
     <ThemeProvider theme={active.theme}>
@@ -63,7 +74,7 @@ export default function App(): React.JSX.Element {
           { backgroundColor: active.theme.background, paddingTop: topInset },
         ]}
       >
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle="dark-content" backgroundColor={active.theme.background} />
         <HomeScreen blocks={active.blocks} listHeader={listHeader} />
         <CampaignOverlay overlay={active.overlay} />
         <CartBadge />
@@ -77,17 +88,45 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    paddingTop: 8,
-    paddingBottom: 14,
+    paddingTop: 6,
+    paddingBottom: 16,
+    gap: 14,
+  },
+  brandRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   brand: {
-    fontSize: 30,
+    fontSize: 28,
     fontWeight: '900',
+    letterSpacing: -0.5,
   },
   tagline: {
-    fontSize: 13,
-    marginTop: 2,
-    marginBottom: 14,
-    opacity: 0.8,
+    fontSize: 12,
+    opacity: 0.65,
+    marginTop: 1,
+    fontWeight: '500',
+  },
+  deliveryBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 12,
+  },
+  deliveryIcon: {
+    fontSize: 18,
+  },
+  deliveryMin: {
+    fontSize: 15,
+    fontWeight: '900',
+    lineHeight: 17,
+  },
+  deliveryLabel: {
+    fontSize: 11,
+    fontWeight: '500',
+    opacity: 0.7,
   },
 });

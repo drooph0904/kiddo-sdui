@@ -1,20 +1,17 @@
 /**
- * DYNAMIC_COLLECTION — a horizontally-scrolling carousel grouped under a server-pushed
- * marketing theme (e.g. "Snacks under ₹99"), nested inside the master vertical feed.
- *
- * Virtualization boundary: this is its own horizontal FlashList, so cards are virtualized
- * independently and horizontal drags are absorbed here without stealing the parent list's
- * vertical momentum. renderItem/keyExtractor are memoized to keep frames stable.
+ * DYNAMIC_COLLECTION — horizontal carousel with "See all →" section header.
+ * Nested horizontal FlashList inside the vertical feed. Gesture separation
+ * ensures horizontal drags don't steal vertical scroll momentum.
  */
 import React, { useCallback } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import type { DynamicCollectionBlock, Product } from '../../types/schema';
 import { useTheme } from '../../theme/ThemeContext';
 import { ProductCard } from '../ProductCard';
 import { RenderBadge } from '../RenderBadge';
 
-const CARD_WIDTH = 150;
+const CARD_WIDTH = 158;
 
 function DynamicCollectionBase({ block }: { block: DynamicCollectionBlock }): React.JSX.Element {
   const theme = useTheme();
@@ -32,7 +29,15 @@ function DynamicCollectionBase({ block }: { block: DynamicCollectionBlock }): Re
   return (
     <View>
       <RenderBadge label="DYNAMIC_COLLECTION" />
-      <Text style={[styles.title, { color: theme.text }]}>{block.title}</Text>
+
+      {/* Section header: title + "See all" */}
+      <View style={styles.header}>
+        <Text style={[styles.title, { color: theme.text }]}>{block.title}</Text>
+        <TouchableOpacity activeOpacity={0.6}>
+          <Text style={[styles.seeAll, { color: theme.primary }]}>See all →</Text>
+        </TouchableOpacity>
+      </View>
+
       <View style={styles.listWrap}>
         <FlashList
           horizontal
@@ -42,7 +47,6 @@ function DynamicCollectionBase({ block }: { block: DynamicCollectionBlock }): Re
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={Separator}
           contentContainerStyle={styles.content}
-
         />
       </View>
     </View>
@@ -56,14 +60,23 @@ function Separator(): React.JSX.Element {
 export const DynamicCollection = React.memo(DynamicCollectionBase);
 
 const styles = StyleSheet.create({
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 12,
+  },
   title: {
     fontSize: 18,
     fontWeight: '800',
-    marginBottom: 10,
+    flex: 1,
   },
-  // FlashList needs a bounded cross-axis; the card height (~230) defines the row.
+  seeAll: {
+    fontSize: 13,
+    fontWeight: '700',
+  },
   listWrap: {
-    height: 240,
+    height: 252,
   },
   content: {
     paddingRight: 4,
