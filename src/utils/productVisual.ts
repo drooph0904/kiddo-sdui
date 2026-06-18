@@ -38,7 +38,7 @@ const RULES: readonly (readonly [RegExp, string, string])[] = [
   [/watercolour|watercolor|paint|art/i, '🎨', '#FDF4FF'],
   [/glue|fevistik/i, '🩹', '#FEF7E0'],
   [/pool/i, '🏊', '#ECFEFF'],
-  [/hat|cap/i, '🧢', '#FFF7ED'],
+  [/\bhat\b|\bcap\b/i, '🧢', '#FFF7ED'],
   [/ball/i, '⚽', '#F0FDF4'],
   [/zoo|petting/i, '🦒', '#FEFCE8'],
   [/splash|park/i, '💦', '#ECFEFF'],
