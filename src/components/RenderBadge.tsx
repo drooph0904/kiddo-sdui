@@ -11,6 +11,7 @@
  */
 import React, { useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useShowBadges } from '../store/debugStore';
 
 interface RenderBadgeProps {
   label: string;
@@ -19,8 +20,9 @@ interface RenderBadgeProps {
 export function RenderBadge({ label }: RenderBadgeProps): React.JSX.Element | null {
   const count = useRef(0);
   count.current += 1;
+  const show = useShowBadges();
 
-  if (!__DEV__) return null;
+  if (!__DEV__ || !show) return null;
 
   return (
     <View style={styles.badge} pointerEvents="none">
