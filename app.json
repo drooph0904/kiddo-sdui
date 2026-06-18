@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "kiddo-tmp",
-    "slug": "kiddo-tmp",
+    "name": "Kiddo",
+    "slug": "kiddo-sdui",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
