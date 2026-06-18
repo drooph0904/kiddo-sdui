@@ -18,7 +18,7 @@
       "type": "BANNER_HERO",
       "title": "Summer Playhouse Festival",
       "subtitle": "Cool deals all season long",
-      "image": "https://source.unsplash.com/800x400/?kids,summer,pool,fun",
+      "image": "https://picsum.photos/seed/kids,summer,pool,fun/800/400",
       "cta": {
         "label": "Explore",
         "action": { "type": "DEEP_LINK", "payload": { "url": "/campaign/summer" } }
@@ -33,29 +33,29 @@
           "id": "evt-pettingzoo",
           "title": "Petting Zoo Day Pass (Child)",
           "price": 299,
-          "image": "https://source.unsplash.com/300x300/?petting,zoo,kids",
-          "action": { "type": "DEEP_LINK", "payload": { "url": "/events/petting-zoo" } }
+          "image": "https://picsum.photos/seed/petting,zoo,kids/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "evt-pettingzoo" } }
         },
         {
           "id": "evt-splashpark",
           "title": "Splash Park Family Ticket (4 pax)",
           "price": 599,
-          "image": "https://source.unsplash.com/300x300/?splash,park,water",
-          "action": { "type": "DEEP_LINK", "payload": { "url": "/events/splash-park" } }
+          "image": "https://picsum.photos/seed/splash,park,water/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "evt-splashpark" } }
         },
         {
           "id": "evt-puppet",
           "title": "Puppet Theatre Show Seat",
           "price": 199,
-          "image": "https://source.unsplash.com/300x300/?puppet,show,kids",
-          "action": { "type": "DEEP_LINK", "payload": { "url": "/events/puppet-show" } }
+          "image": "https://picsum.photos/seed/puppet,show,kids/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "evt-puppet" } }
         },
         {
           "id": "evt-craft",
           "title": "Summer Craft Workshop (1 child)",
           "price": 349,
-          "image": "https://source.unsplash.com/300x300/?craft,kids,workshop",
-          "action": { "type": "DEEP_LINK", "payload": { "url": "/events/craft-workshop" } }
+          "image": "https://picsum.photos/seed/craft,kids,workshop/300/300",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "evt-craft" } }
         }
       ]
     },
@@ -68,28 +68,28 @@
           "id": "sm-bestway-pool",
           "title": "Bestway Inflatable Paddling Pool 152cm",
           "price": 999,
-          "image": "https://source.unsplash.com/300x300/?inflatable,pool,kids",
+          "image": "https://picsum.photos/seed/inflatable,pool,kids/300/300",
           "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-bestway-pool" } }
         },
         {
           "id": "sm-chicco-hat",
           "title": "Chicco Wide-Brim UV Sun Hat",
           "price": 249,
-          "image": "https://source.unsplash.com/300x300/?kids,sun,hat",
+          "image": "https://picsum.photos/seed/kids,sun,hat/300/300",
           "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-chicco-hat" } }
         },
         {
           "id": "sm-lotus-sunscreen",
           "title": "Lotus Herbals Baby SPF50 Sunscreen 100g",
           "price": 399,
-          "image": "https://source.unsplash.com/300x300/?sunscreen,baby,lotion",
+          "image": "https://picsum.photos/seed/sunscreen,baby,lotion/300/300",
           "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-lotus-sunscreen" } }
         },
         {
           "id": "sm-funskool-beach",
           "title": "Funskool Beach Ball Combo Set",
           "price": 179,
-          "image": "https://source.unsplash.com/300x300/?beach,ball,colorful",
+          "image": "https://picsum.photos/seed/beach,ball,colorful/300/300",
           "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-funskool-beach" } }
         }
       ]
