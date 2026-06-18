@@ -17,8 +17,8 @@
       "id": "summer-hero",
       "type": "BANNER_HERO",
       "title": "Summer Playhouse Festival",
-      "subtitle": "Splash into cool deals all season",
-      "image": "https://picsum.photos/seed/summer/800/400",
+      "subtitle": "Cool deals all season long",
+      "image": "https://source.unsplash.com/800x400/?kids,summer,pool,fun",
       "cta": {
         "label": "Explore",
         "action": { "type": "DEEP_LINK", "payload": { "url": "/campaign/summer" } }
@@ -31,30 +31,30 @@
       "products": [
         {
           "id": "evt-pettingzoo",
-          "title": "Petting Zoo Day Pass",
+          "title": "Petting Zoo Day Pass (Child)",
           "price": 299,
-          "image": "https://picsum.photos/seed/pettingzoo/300/300",
+          "image": "https://source.unsplash.com/300x300/?petting,zoo,kids",
           "action": { "type": "DEEP_LINK", "payload": { "url": "/events/petting-zoo" } }
         },
         {
           "id": "evt-splashpark",
-          "title": "Splash Park Family Ticket",
+          "title": "Splash Park Family Ticket (4 pax)",
           "price": 599,
-          "image": "https://picsum.photos/seed/splashpark/300/300",
+          "image": "https://source.unsplash.com/300x300/?splash,park,water",
           "action": { "type": "DEEP_LINK", "payload": { "url": "/events/splash-park" } }
         },
         {
           "id": "evt-puppet",
-          "title": "Puppet Show Seat",
+          "title": "Puppet Theatre Show Seat",
           "price": 199,
-          "image": "https://picsum.photos/seed/puppet/300/300",
+          "image": "https://source.unsplash.com/300x300/?puppet,show,kids",
           "action": { "type": "DEEP_LINK", "payload": { "url": "/events/puppet-show" } }
         },
         {
           "id": "evt-craft",
-          "title": "Summer Craft Workshop",
+          "title": "Summer Craft Workshop (1 child)",
           "price": 349,
-          "image": "https://picsum.photos/seed/craft/300/300",
+          "image": "https://source.unsplash.com/300x300/?craft,kids,workshop",
           "action": { "type": "DEEP_LINK", "payload": { "url": "/events/craft-workshop" } }
         }
       ]
@@ -65,32 +65,32 @@
       "title": "Beat the Heat",
       "products": [
         {
-          "id": "sm-pool",
-          "title": "Inflatable Baby Pool",
+          "id": "sm-bestway-pool",
+          "title": "Bestway Inflatable Paddling Pool 152cm",
           "price": 999,
-          "image": "https://picsum.photos/seed/pool/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-pool" } }
+          "image": "https://source.unsplash.com/300x300/?inflatable,pool,kids",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-bestway-pool" } }
         },
         {
-          "id": "sm-hat",
-          "title": "Wide-Brim Sun Hat",
+          "id": "sm-chicco-hat",
+          "title": "Chicco Wide-Brim UV Sun Hat",
           "price": 249,
-          "image": "https://picsum.photos/seed/sunhat/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-hat" } }
+          "image": "https://source.unsplash.com/300x300/?kids,sun,hat",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-chicco-hat" } }
         },
         {
-          "id": "sm-sunscreen",
-          "title": "Baby SPF50 Sunscreen",
+          "id": "sm-lotus-sunscreen",
+          "title": "Lotus Herbals Baby SPF50 Sunscreen 100g",
           "price": 399,
-          "image": "https://picsum.photos/seed/sunscreen/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-sunscreen" } }
+          "image": "https://source.unsplash.com/300x300/?sunscreen,baby,lotion",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-lotus-sunscreen" } }
         },
         {
-          "id": "sm-ball",
-          "title": "Beach Ball Combo",
+          "id": "sm-funskool-beach",
+          "title": "Funskool Beach Ball Combo Set",
           "price": 179,
-          "image": "https://picsum.photos/seed/beachball/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-ball" } }
+          "image": "https://source.unsplash.com/300x300/?beach,ball,colorful",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "sm-funskool-beach" } }
         }
       ]
     }

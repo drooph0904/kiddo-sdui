@@ -18,9 +18,9 @@
       "type": "BANNER_HERO",
       "title": "Back to School Mega-Sale",
       "subtitle": "Up to 50% off bags, bottles & supplies",
-      "image": "https://picsum.photos/seed/backtoschool/800/400",
+      "image": "https://source.unsplash.com/800x400/?school,kids,backpack",
       "cta": {
-        "label": "Grab deals",
+        "label": "Grab Deals",
         "action": { "type": "DEEP_LINK", "payload": { "url": "/campaign/back-to-school" } }
       }
     },
@@ -30,67 +30,67 @@
       "title": "Lunchboxes & Bags",
       "products": [
         {
-          "id": "bts-lunchbox",
-          "title": "Insulated Steel Lunchbox",
-          "price": 649,
-          "image": "https://picsum.photos/seed/lunchbox/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-lunchbox" } }
+          "id": "bts-milton-lunch",
+          "title": "Milton Steel Insulated Lunch Box 3 Tier",
+          "price": 549,
+          "image": "https://source.unsplash.com/300x300/?lunchbox,kids,steel",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-milton-lunch" } }
         },
         {
-          "id": "bts-backpack",
-          "title": "Dino Kids Backpack",
+          "id": "bts-wildcraft-bag",
+          "title": "Wildcraft Dino Kids School Backpack 20L",
           "price": 899,
-          "image": "https://picsum.photos/seed/backpack/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-backpack" } }
+          "image": "https://source.unsplash.com/300x300/?kids,backpack,school",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-wildcraft-bag" } }
         },
         {
-          "id": "bts-bottle",
-          "title": "Sipper Water Bottle 600ml",
-          "price": 299,
-          "image": "https://picsum.photos/seed/bottle/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-bottle" } }
+          "id": "bts-cello-bottle",
+          "title": "Cello H2O Kids Sipper Bottle 600ml",
+          "price": 249,
+          "image": "https://source.unsplash.com/300x300/?kids,water,bottle",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-cello-bottle" } }
         },
         {
-          "id": "bts-pencilcase",
-          "title": "Zip Pencil Case",
-          "price": 149,
-          "image": "https://picsum.photos/seed/pencilcase/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-pencilcase" } }
+          "id": "bts-camlin-case",
+          "title": "Camlin Zip Around Pencil Case",
+          "price": 89,
+          "image": "https://source.unsplash.com/300x300/?pencil,case,kids",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-camlin-case" } }
         }
       ]
     },
     {
       "id": "bts-stationery",
       "type": "PRODUCT_GRID_2X2",
-      "title": "Stationery Stock-Up",
+      "title": "Stationery Must-Haves",
       "products": [
         {
-          "id": "bts-crayons",
-          "title": "Washable Crayons (24)",
-          "price": 129,
-          "image": "https://picsum.photos/seed/crayons/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-crayons" } }
-        },
-        {
-          "id": "bts-notebooks",
-          "title": "Ruled Notebooks (Pack of 6)",
-          "price": 199,
-          "image": "https://picsum.photos/seed/notebooks/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-notebooks" } }
-        },
-        {
-          "id": "bts-colors",
-          "title": "Watercolour Paint Set",
-          "price": 249,
-          "image": "https://picsum.photos/seed/paints/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-colors" } }
-        },
-        {
-          "id": "bts-glue",
-          "title": "Non-Toxic Glue Sticks (3)",
+          "id": "bts-camlin-crayons",
+          "title": "Camlin Wax Crayons 24 Shades",
           "price": 89,
-          "image": "https://picsum.photos/seed/glue/300/300",
-          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-glue" } }
+          "image": "https://source.unsplash.com/300x300/?crayons,colorful,kids",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-camlin-crayons" } }
+        },
+        {
+          "id": "bts-navneet-notebooks",
+          "title": "Navneet Ruled Notebooks Pack of 6",
+          "price": 149,
+          "image": "https://source.unsplash.com/300x300/?notebook,school,stationery",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-navneet-notebooks" } }
+        },
+        {
+          "id": "bts-faber-watercolour",
+          "title": "Faber-Castell Watercolour Paint Set 12",
+          "price": 199,
+          "image": "https://source.unsplash.com/300x300/?watercolour,paint,art",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-faber-watercolour" } }
+        },
+        {
+          "id": "bts-pidilite-glue",
+          "title": "Pidilite Fevistik Glue Sticks Pack of 3",
+          "price": 49,
+          "image": "https://source.unsplash.com/300x300/?glue,craft,school",
+          "action": { "type": "ADD_TO_CART", "payload": { "id": "bts-pidilite-glue" } }
         }
       ]
     }

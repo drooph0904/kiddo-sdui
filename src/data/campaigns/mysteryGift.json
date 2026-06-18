@@ -17,10 +17,10 @@
       "id": "mystery-hero",
       "type": "BANNER_HERO",
       "title": "Mystery Gift Carnival",
-      "subtitle": "Every order unwraps a surprise 🎁",
-      "image": "https://picsum.photos/seed/carnival/800/400",
+      "subtitle": "Every order hides a surprise 🎁",
+      "image": "https://source.unsplash.com/800x400/?gift,surprise,colorful",
       "cta": {
-        "label": "Reveal my gift",
+        "label": "Reveal My Gift",
         "action": { "type": "APPLY_MYSTERY_GIFT_COUPON", "payload": { "couponId": "CARNIVAL-HERO" } }
       }
     },
@@ -33,28 +33,28 @@
           "id": "mg-box-red",
           "title": "Red Mystery Box",
           "price": 1,
-          "image": "https://picsum.photos/seed/redbox/300/300",
+          "image": "https://source.unsplash.com/300x300/?red,gift,box",
           "action": { "type": "APPLY_MYSTERY_GIFT_COUPON", "payload": { "couponId": "MYSTERY-RED" } }
         },
         {
           "id": "mg-box-gold",
           "title": "Gold Mystery Box",
           "price": 1,
-          "image": "https://picsum.photos/seed/goldbox/300/300",
+          "image": "https://source.unsplash.com/300x300/?gold,gift,box",
           "action": { "type": "APPLY_MYSTERY_GIFT_COUPON", "payload": { "couponId": "MYSTERY-GOLD" } }
         },
         {
           "id": "mg-box-blue",
           "title": "Blue Mystery Box",
           "price": 1,
-          "image": "https://picsum.photos/seed/bluebox/300/300",
+          "image": "https://source.unsplash.com/300x300/?blue,gift,surprise",
           "action": { "type": "APPLY_MYSTERY_GIFT_COUPON", "payload": { "couponId": "MYSTERY-BLUE" } }
         },
         {
           "id": "mg-box-green",
           "title": "Green Mystery Box",
           "price": 1,
-          "image": "https://picsum.photos/seed/greenbox/300/300",
+          "image": "https://source.unsplash.com/300x300/?green,present,kids",
           "action": { "type": "APPLY_MYSTERY_GIFT_COUPON", "payload": { "couponId": "MYSTERY-GREEN" } }
         }
       ]
@@ -66,30 +66,30 @@
       "products": [
         {
           "id": "mg-popcorn",
-          "title": "Caramel Popcorn Tub",
+          "title": "Act II Caramel Popcorn Party Tub 130g",
           "price": 120,
-          "image": "https://picsum.photos/seed/popcorn/300/300",
+          "image": "https://source.unsplash.com/300x300/?popcorn,caramel,snack",
           "action": { "type": "ADD_TO_CART", "payload": { "id": "mg-popcorn" } }
         },
         {
           "id": "mg-balloons",
-          "title": "Party Balloon Pack (50)",
+          "title": "Funskool Latex Balloon Pack of 50",
           "price": 199,
-          "image": "https://picsum.photos/seed/balloons/300/300",
+          "image": "https://source.unsplash.com/300x300/?balloon,colorful,party",
           "action": { "type": "ADD_TO_CART", "payload": { "id": "mg-balloons" } }
         },
         {
           "id": "mg-mask",
-          "title": "Carnival Mask Set",
+          "title": "Carnival Sequin Mask Set of 4",
           "price": 149,
-          "image": "https://picsum.photos/seed/mask/300/300",
+          "image": "https://source.unsplash.com/300x300/?carnival,mask,colorful",
           "action": { "type": "ADD_TO_CART", "payload": { "id": "mg-mask" } }
         },
         {
           "id": "mg-candy",
-          "title": "Assorted Candy Jar",
+          "title": "Chupa Chups Assorted Candy Jar 200g",
           "price": 249,
-          "image": "https://picsum.photos/seed/candy/300/300",
+          "image": "https://source.unsplash.com/300x300/?candy,lollipop,sweet",
           "action": { "type": "ADD_TO_CART", "payload": { "id": "mg-candy" } }
         }
       ]
