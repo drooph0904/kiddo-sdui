@@ -11,6 +11,7 @@ import type { Product } from '../types/schema';
 import { useTheme } from '../theme/ThemeContext';
 import { useItemQty } from '../store/cartStore';
 import { handleAction } from '../actions/handleAction';
+import { RenderBadge } from './RenderBadge';
 
 interface ProductCardProps {
   product: Product;
@@ -35,6 +36,7 @@ function ProductCardBase({ product, width }: ProductCardProps): React.JSX.Elemen
         width === undefined && styles.flexCell,
       ]}
     >
+      <RenderBadge label={product.id} />
       <Image source={{ uri: product.image }} style={styles.image} resizeMode="cover" />
       <Text numberOfLines={2} style={[styles.title, { color: theme.text }]}>
         {product.title}

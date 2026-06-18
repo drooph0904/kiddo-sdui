@@ -7,6 +7,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import type { ProductGrid2x2Block } from '../../types/schema';
 import { useTheme } from '../../theme/ThemeContext';
 import { ProductCard } from '../ProductCard';
+import { RenderBadge } from '../RenderBadge';
 
 function ProductGrid2x2Base({ block }: { block: ProductGrid2x2Block }): React.JSX.Element {
   const theme = useTheme();
@@ -18,6 +19,7 @@ function ProductGrid2x2Base({ block }: { block: ProductGrid2x2Block }): React.JS
 
   return (
     <View>
+      <RenderBadge label="GRID_2X2" />
       {block.title ? (
         <Text style={[styles.title, { color: theme.text }]}>{block.title}</Text>
       ) : null}

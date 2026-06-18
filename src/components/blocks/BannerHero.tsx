@@ -7,6 +7,7 @@ import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native
 import type { BannerHeroBlock } from '../../types/schema';
 import { useTheme } from '../../theme/ThemeContext';
 import { handleAction } from '../../actions/handleAction';
+import { RenderBadge } from '../RenderBadge';
 
 function BannerHeroBase({ block }: { block: BannerHeroBlock }): React.JSX.Element {
   const theme = useTheme();
@@ -17,6 +18,8 @@ function BannerHeroBase({ block }: { block: BannerHeroBlock }): React.JSX.Elemen
   }
 
   return (
+    <View>
+    <RenderBadge label="BANNER_HERO" />
     <ImageBackground
       source={{ uri: block.image }}
       style={styles.banner}
@@ -38,6 +41,7 @@ function BannerHeroBase({ block }: { block: BannerHeroBlock }): React.JSX.Elemen
         ) : null}
       </View>
     </ImageBackground>
+    </View>
   );
 }
 

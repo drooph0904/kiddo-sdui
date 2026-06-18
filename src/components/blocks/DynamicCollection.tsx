@@ -12,6 +12,7 @@ import { FlashList } from '@shopify/flash-list';
 import type { DynamicCollectionBlock, Product } from '../../types/schema';
 import { useTheme } from '../../theme/ThemeContext';
 import { ProductCard } from '../ProductCard';
+import { RenderBadge } from '../RenderBadge';
 
 const CARD_WIDTH = 150;
 
@@ -30,6 +31,7 @@ function DynamicCollectionBase({ block }: { block: DynamicCollectionBlock }): Re
 
   return (
     <View>
+      <RenderBadge label="DYNAMIC_COLLECTION" />
       <Text style={[styles.title, { color: theme.text }]}>{block.title}</Text>
       <View style={styles.listWrap}>
         <FlashList
