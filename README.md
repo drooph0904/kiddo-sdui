@@ -26,10 +26,12 @@ npx expo start          # then press 'a' (Android) or 'i' (iOS)
 For a physical Android phone: install **Expo Go**, plug in via USB (USB debugging on), press
 **`a`**. Or scan the QR with Expo Go over the same Wi-Fi.
 
-Type-check the whole project (strict mode) at any time:
+Quality gates (all run clean):
 
 ```bash
-npx tsc --noEmit
+npm run typecheck   # tsc --noEmit, strict mode
+npm run lint        # eslint (eslint-config-expo)
+npm test            # jest-expo unit tests
 ```
 
 ---
@@ -142,7 +144,7 @@ modeled honestly as `UnknownBlock` until the registry validates them.
 | Decoupled, logic-free components | all blocks/cards only call `handleAction` |
 | Single vertical `FlashList`, strict `keyExtractor`, `React.memo` | `src/screens/HomeScreen.tsx` |
 | 3 distinct live campaigns, instant runtime switch | `src/data/campaigns/*` + `CampaignPicker` |
-| `FULL_SCREEN_OVERLAY` Lottie, `pointerEvents="none"` | `src/components/CampaignOverlay.tsx` |
+| `FULL_SCREEN_OVERLAY` Lottie, `pointerEvents="none"`, cached media | `src/components/CampaignOverlay.tsx` + `src/utils/lottieCache.ts` |
 | OTA theming via Context Provider | `src/theme/ThemeContext.tsx` |
 | Add-to-cart re-render isolation | `src/store/cartStore.ts` selectors + `React.memo` |
 | TypeScript strict, full contracts | `src/types/schema.ts`, `tsconfig` strict |
@@ -184,6 +186,8 @@ modeled honestly as `UnknownBlock` until the registry validates them.
 | `src/store/debugStore.ts` | Toggles the render badges |
 | `src/theme/ThemeContext.tsx` | OTA theming via Context |
 | `src/utils/productVisual.ts` | Title → category emoji + pastel (catalog imagery) |
+| `src/utils/lottieCache.ts` | Fetch-once, memoized cache for remote campaign animations |
+| `src/**/*.test.ts` | jest-expo unit tests (registry, cart, dispatcher, productVisual) |
 | `src/screens/HomeScreen.tsx` | The single vertical `FlashList` |
 
 ---
