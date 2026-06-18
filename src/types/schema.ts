@@ -37,6 +37,12 @@ export interface DeepLinkAction {
   payload: { url: string };
 }
 
+/** Remove / decrement one unit from the cart. */
+export interface RemoveFromCartAction {
+  type: 'REMOVE_FROM_CART';
+  payload: { id: string };
+}
+
 /** Apply a mystery-gift coupon (Mystery Gift Carnival campaign). */
 export interface ApplyMysteryGiftCouponAction {
   type: 'APPLY_MYSTERY_GIFT_COUPON';
@@ -46,6 +52,7 @@ export interface ApplyMysteryGiftCouponAction {
 /** Every interactive node carries one of these. Discriminated on `type`. */
 export type Action =
   | AddToCartAction
+  | RemoveFromCartAction
   | DeepLinkAction
   | ApplyMysteryGiftCouponAction;
 

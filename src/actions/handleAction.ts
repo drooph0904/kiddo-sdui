@@ -16,6 +16,10 @@ export function handleAction(action: Action): void {
       useCartStore.getState().addItem(action.payload.id);
       break;
 
+    case 'REMOVE_FROM_CART':
+      useCartStore.getState().removeItem(action.payload.id);
+      break;
+
     case 'DEEP_LINK':
       // No navigation library in scope — surface the intended destination instead.
       Alert.alert('Deep Link', `Would navigate to: ${action.payload.url}`);

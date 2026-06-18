@@ -17,6 +17,7 @@ import { create } from 'zustand';
 interface CartState {
   items: Record<string, number>;
   addItem: (id: string) => void;
+  removeItem: (id: string) => void;
 }
 
 export const useCartStore = create<CartState>((set) => ({
@@ -25,6 +26,16 @@ export const useCartStore = create<CartState>((set) => ({
     set((state) => ({
       items: { ...state.items, [id]: (state.items[id] ?? 0) + 1 },
     })),
+  removeItem: (id: string) =>
+    set((state) => {
+      const current = state.items[id] ?? 0;
+      if (current <= 1) {
+        const next = { ...state.items };
+        delete next[id];
+        return { items: next };
+      }
+      return { items: { ...state.items, [id]: current - 1 } };
+    }),
 }));
 
 /** Quantity of a single product. Subscribers re-render only when this id changes. */
