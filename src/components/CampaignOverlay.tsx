@@ -6,7 +6,7 @@
  * occlusion. lottie-react-native caches the remote animation it fetches by URL.
  */
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import LottieView from 'lottie-react-native';
 import type { OverlayConfig } from '../types/schema';
 
@@ -16,6 +16,11 @@ export function CampaignOverlay({
   overlay?: OverlayConfig;
 }): React.JSX.Element | null {
   if (!overlay) {
+    return null;
+  }
+
+  // lottie-react-native targets native; skip the overlay on the web preview build.
+  if (Platform.OS === 'web') {
     return null;
   }
 
