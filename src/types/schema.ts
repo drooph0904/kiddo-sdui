@@ -63,6 +63,12 @@ export interface Product {
   title: string;
   /** Price in INR (whole rupees). */
   price: number;
+  /**
+   * Product image URL as a real payload would carry it. The demo renders a category emoji
+   * tile instead of this URL (reliable + always on-topic for a mock); a production build
+   * would swap the tile for `expo-image` reading this field — see README §8. Kept in the
+   * contract so the schema matches what the gateway actually sends.
+   */
   image: string;
   action: Action;
 }
@@ -74,6 +80,11 @@ export interface BannerHeroBlock {
   type: 'BANNER_HERO';
   title: string;
   subtitle?: string;
+  /**
+   * Hero image URL from the payload. The demo renders a themed gradient (always on-brand,
+   * no network dependency) rather than this image; a production build could use it as the
+   * banner background. Retained so the contract mirrors the real gateway payload.
+   */
   image: string;
   cta?: { label: string; action: Action };
 }
