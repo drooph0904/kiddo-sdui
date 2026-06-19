@@ -209,6 +209,61 @@ performance, type-safety, resilience):
 - **Block order differs per campaign by design** — the JSON controls layout order, which is
   the whole SDUI proposition (the server rearranges the page, not the client).
 
+## AI Generative UI
+
+A "✨ Generate" mode lets a user type a free-form prompt (e.g. *"rainy day indoor play for toddlers"*) and receive a fully composed homepage — theme colours and layout tree — invented by the AI on the fly. Products in the generated screen are created by the model; they are not drawn from a real catalogue.
+
+### Architecture
+
+```
+user prompt ──▶ POST /generate (Fastify, port 8787)
+                    │
+                    ▼
+              OpenAI chat completion (JSON mode)
+                    │
+                    ▼
+              Zod validation against GeneratedPayloadSchema
+              (retries up to 3× on invalid output)
+                    │
+                    ▼
+              { theme, tree } returned as JSON
+                    │
+                    ▼
+              GenerateScreen (React Native)
+                    │
+                    ▼
+              recursive SafeNode renderer
+              (Column / Row / Grid / Carousel / Text / Button / ProductCard / Banner)
+```
+
+`SafeNode` mirrors the existing `SafeBlock` approach — any node type the client does not recognise is silently dropped, so a new server-side node never crashes the screen.
+
+The Zod schema in `shared/uiSchema.ts` is the **single source of truth**: the server validates the OpenAI response against it and the app imports the same types and runtime guard from it.
+
+### Running the server
+
+```bash
+cd server
+cp .env.example .env          # creates .env (gitignored)
+# edit .env: set OPENAI_API_KEY=sk-...
+# optional: set OPENAI_MODEL=gpt-4o-mini (default)
+npm install
+npm run dev                   # tsx watch — listens on port 8787
+```
+
+### Android emulator URL
+
+The Android emulator reaches the host machine at `10.0.2.2` (not `localhost`). The app switches automatically via `src/config.ts`:
+
+```
+Android emulator  → http://10.0.2.2:8787
+iOS / other       → http://localhost:8787
+```
+
+No manual configuration is needed.
+
+---
+
 ## 8. How I'd productionize this
 
 - **Schema validation at the boundary** — replace the single `as` cast with a `zod`/`io-ts`
