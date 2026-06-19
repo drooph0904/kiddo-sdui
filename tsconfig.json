@@ -6,5 +6,6 @@
     "baseUrl": ".",
     "paths": { "@shared/*": ["shared/*"] },
     "ignoreDeprecations": "6.0"
-  }
+  },
+  "exclude": ["node_modules", "server", "dist", ".expo"]
 }

@@ -39,6 +39,10 @@
     "preset": "jest-expo",
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@shopify/.*|lottie-react-native|zustand))"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/server/"
     ]
   }
 }

@@ -5,6 +5,8 @@
     "moduleResolution": "Bundler",
     "target": "ES2022",
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   }
 }
