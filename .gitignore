@@ -40,3 +40,7 @@ yarn-error.*
 /ios
 /android
 .superpowers/
+
+# server
+server/node_modules/
+server/.env
