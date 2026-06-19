@@ -14,7 +14,7 @@ import { useDebugStore } from './src/store/debugStore';
 import { campaigns, homePayload } from './src/data';
 import type { OverlayConfig, Theme, UnknownBlock } from './src/types/schema';
 import { GenerativeScreen } from './src/generative/GenerativeScreen';
-import { sampleTree } from './src/generative/sampleTree';
+import { useGenerativeStore } from './src/store/generativeStore';
 
 const HOME_ID = 'home';
 const GENERATE_ID = 'generate';
@@ -28,6 +28,7 @@ interface ActiveContext {
 export default function App(): React.JSX.Element {
   const [activeId, setActiveId] = useState<string>(HOME_ID);
   const toggleBadges = useDebugStore((s) => s.toggleBadges);
+  const generativePayload = useGenerativeStore((s) => s.payload);
 
   const options: PickerOption[] = useMemo(
     () => [
@@ -40,13 +41,13 @@ export default function App(): React.JSX.Element {
 
   const active: ActiveContext = useMemo(() => {
     if (activeId === GENERATE_ID) {
-      return { theme: sampleTree.theme, blocks: [] };
+      return { theme: generativePayload?.theme ?? homePayload.theme, blocks: [] };
     }
     const campaign = campaigns.find((c) => c.id === activeId);
     return campaign
       ? { theme: campaign.theme, blocks: campaign.blocks, overlay: campaign.overlay }
       : { theme: homePayload.theme, blocks: homePayload.blocks };
-  }, [activeId]);
+  }, [activeId, generativePayload]);
 
   const topInset = Platform.OS === 'android' ? StatusBar.currentHeight ?? 0 : 44;
 
@@ -105,7 +106,7 @@ export default function App(): React.JSX.Element {
       >
         <StatusBar barStyle="dark-content" backgroundColor={active.theme.background} />
         {isGenerative ? (
-          <GenerativeScreen tree={sampleTree.tree} />
+          <GenerativeScreen />
         ) : (
           <>
             <HomeScreen blocks={active.blocks} listHeader={listHeader} />
