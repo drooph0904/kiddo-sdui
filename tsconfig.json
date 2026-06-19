@@ -2,6 +2,9 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    "types": ["jest", "react"]
+    "types": ["jest", "react"],
+    "baseUrl": ".",
+    "paths": { "@shared/*": ["shared/*"] },
+    "ignoreDeprecations": "6.0"
   }
 }
