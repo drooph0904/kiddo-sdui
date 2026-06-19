@@ -13,8 +13,12 @@ import { CampaignPicker, type PickerOption } from './src/components/CampaignPick
 import { useDebugStore } from './src/store/debugStore';
 import { campaigns, homePayload } from './src/data';
 import type { OverlayConfig, Theme, UnknownBlock } from './src/types/schema';
+import { GenerativeScreen } from './src/generative/GenerativeScreen';
+import { useGenerativeStore } from './src/store/generativeStore';
+import { sampleTree } from './src/generative/sampleTree';
 
 const HOME_ID = 'home';
+const GENERATE_ID = 'generate';
 
 interface ActiveContext {
   theme: Theme;
@@ -25,16 +29,22 @@ interface ActiveContext {
 export default function App(): React.JSX.Element {
   const [activeId, setActiveId] = useState<string>(HOME_ID);
   const toggleBadges = useDebugStore((s) => s.toggleBadges);
+  const generativePayload = useGenerativeStore((s) => s.payload);
+  const setGenerativePayload = useGenerativeStore((s) => s.setPayload);
 
   const options: PickerOption[] = useMemo(
     () => [
       { id: HOME_ID, label: '🏠 Home' },
       ...campaigns.map((c) => ({ id: c.id, label: c.name })),
+      { id: GENERATE_ID, label: '✨ Generate' },
     ],
     [],
   );
 
   const active: ActiveContext = useMemo(() => {
+    if (activeId === GENERATE_ID) {
+      return { theme: sampleTree.theme, blocks: [] };
+    }
     const campaign = campaigns.find((c) => c.id === activeId);
     return campaign
       ? { theme: campaign.theme, blocks: campaign.blocks, overlay: campaign.overlay }
@@ -86,6 +96,13 @@ export default function App(): React.JSX.Element {
     </View>
   );
 
+  const isGenerative = activeId === GENERATE_ID;
+
+  // Seed the generative store with the sample tree if switching to generate mode and store is empty.
+  if (isGenerative && generativePayload === null) {
+    setGenerativePayload(sampleTree);
+  }
+
   return (
     <ThemeProvider theme={active.theme}>
       <View
@@ -95,8 +112,14 @@ export default function App(): React.JSX.Element {
         ]}
       >
         <StatusBar barStyle="dark-content" backgroundColor={active.theme.background} />
-        <HomeScreen blocks={active.blocks} listHeader={listHeader} />
-        <CampaignOverlay key={activeId} overlay={active.overlay} />
+        {isGenerative ? (
+          <GenerativeScreen tree={sampleTree.tree} />
+        ) : (
+          <>
+            <HomeScreen blocks={active.blocks} listHeader={listHeader} />
+            <CampaignOverlay key={activeId} overlay={active.overlay} />
+          </>
+        )}
         <CartBadge />
       </View>
     </ThemeProvider>
