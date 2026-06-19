@@ -37,7 +37,7 @@ export function ProductCardNode({ node }: { node: Extract<UINode, { type: 'Produ
 export function BannerNode({ node }: { node: Extract<UINode, { type: 'Banner' }> }): React.JSX.Element {
   const theme = useTheme();
   return (
-    <View style={[styles.banner, { backgroundColor: theme.primary }]}>
+    <View style={[styles.banner, { backgroundColor: node.background ?? theme.primary }]}>
       <Text style={styles.bTitle}>{node.title}</Text>
       {node.subtitle ? <Text style={styles.bSub}>{node.subtitle}</Text> : null}
       {node.cta ? (

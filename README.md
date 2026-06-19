@@ -223,7 +223,7 @@ user prompt ──▶ POST /generate (Fastify, port 8787)
                     │
                     ▼
               Zod validation against GeneratedPayloadSchema
-              (retries up to 3× on invalid output)
+              (validates, retries once on invalid output)
                     │
                     ▼
               { theme, tree } returned as JSON
