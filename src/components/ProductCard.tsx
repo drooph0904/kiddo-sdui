@@ -20,9 +20,10 @@ import { RenderBadge } from './RenderBadge';
 interface ProductCardProps {
   product: Product;
   width?: number;
+  emojiOverride?: string;
 }
 
-function ProductCardBase({ product, width }: ProductCardProps): React.JSX.Element {
+function ProductCardBase({ product, width, emojiOverride }: ProductCardProps): React.JSX.Element {
   const theme = useTheme();
   const qty = useItemQty(product.id);
 
@@ -30,7 +31,7 @@ function ProductCardBase({ product, width }: ProductCardProps): React.JSX.Elemen
     console.log(`[render] ProductCard ${product.id} (qty=${qty})`);
   }
 
-  const { emoji, bg } = getProductVisual(product.title);
+  const { emoji, bg } = emojiOverride ? { emoji: emojiOverride, bg: '#F3F4F6' } : getProductVisual(product.title);
   // Synthesize a believable MRP + discount for Q-commerce feel.
   const mrp = Math.round((product.price * 1.3) / 5) * 5 + 4;
   const discount = Math.round((1 - product.price / mrp) * 100);
